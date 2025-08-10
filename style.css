@@ -61,6 +61,8 @@ h1::after {
 }
 
 .menu a {
+  display: flex;
+  flex-wrap: wrap;
   background: #ffffff;
   padding: 0.9rem 1.9rem;
   border-radius: 4px;
@@ -87,6 +89,11 @@ h1::after {
   gap: 20px;
   align-content: center;
   justify-items: end;
+}
+
+introducao-cover img {
+  object-fit: cover;
+  height: 100%;
 }
 
 .botao {
@@ -122,6 +129,7 @@ h1::after {
   grid-template-columns: auto 1fr;
   gap: 10px 20px;
   padding: 1.25rem;
+  border-left: 2px solid transparent;
 }
 
 .vantagens-item:nth-child(odd) {
@@ -129,7 +137,7 @@ h1::after {
 }
 
 .vantagens-item:hover {
-  box-shadow: -3px 0 0 0 #e21;
+  border-left: 2px solid #e21;
 }
 
 .vantagens-item p {
@@ -142,4 +150,62 @@ h1::after {
   text-align: center;
   padding: 2.5rem;
   box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .conteudo-vantagens {
+    grid-template-columns: 1fr;
+  }
+  .subtitulo {
+    text-align: center;
+  }
+  .vantagens {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    gap: 30px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .header {
+    gap: 40px;
+  }
+
+  .menu {
+    gap: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  h1::after {
+    display: none;
+  }
+
+  .introducao {
+    text-align: left;
+    justify-items: start;
+  }
+
+  .subtitulo {
+    font-size: 3rem;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
 }
